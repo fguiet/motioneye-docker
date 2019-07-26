@@ -1,0 +1,10 @@
+docker run --privileged --name="motioneye" \
+    -p 8765:8765 \
+    --hostname="motioneye" \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /home/fred/applications/motioneye/conf:/etc/motioneye \
+    -v /home/fred/applications/motioneye/data:/var/lib/motioneye \
+    --restart="always" \
+    --detach=true \
+    --device=/dev/video0 \
+    guiet/motioneye:v1
