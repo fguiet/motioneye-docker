@@ -1,4 +1,4 @@
-# A little repository to get motioneye work with a Raspberry Pi Zero, a Raspberry Cam and Docker
+# Getting motioneye work with a Raspberry Pi Zero, a Raspberry Cam and Docker
 
 ## Download a HypriotOS image and burn it on a SD card
 
@@ -53,7 +53,8 @@ cd /home/fred/applications/motioneye/motioneye-docker/Docker
 chmod u+x motioneye_dockerrun
 ./motioneye_dockerrun
 ```
-5. Open your favorite brower...wait for motioneye to be ready and Enjoy !
+
+5. Open your favorite browser...wait for motioneye to be ready and enjoy !
 
 ```
 http://your_raspberry_zero_ip:8765/
