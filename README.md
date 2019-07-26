@@ -24,6 +24,13 @@ I recommend you to read his Wiki about how to configure MotionEye for more infor
 mkdir -p /home/fred/applications/motioneye
 mkdir -p /home/fred/applications/motioneye/conf
 mkdir -p /home/fred/applications/motioneye/data
+cd /home/fred/applications/motioneye
+```
+
+2. Git clone this repository
+
+```bash
+git clone https://github.com/fguiet/motioneye-docker.git
 ```
 
 2. Git clone ccrisan motioneye repository
@@ -32,11 +39,24 @@ mkdir -p /home/fred/applications/motioneye/data
 git clone -b dev https://github.com/ccrisan/motioneye.git
 ```
 
-3. Enter project folder
+3. Enter project folder, build the docker image and have a cup of coffe (or two..or three...)
 
 ```
- cd motioneye
+cd motioneye
+docker build --build-arg VCS_REF=$(git rev-parse HEAD)  --build-arg BUILD_DATE=$(date +"%Y-%m-%dT%H:%M:%SZ") -t guiet/motioneye:v1 -f  /home/fred/applications/motioneye/motioneye-docker/Docker/motioneye_dockerfile .
 ```
-     
- # If you would like build docker image from official project
- docker build --build-arg VCS_REF=$(git rev-parse HEAD) --build-arg BUILD_DATE=$(date +"%Y-%m-%dT%H:%M:%SZ") -t ccrisan/motioneye:master-amd64 -f extra/Dockerfile .
+
+4. Run docker motioneye
+
+```bash
+cd /home/fred/applications/motioneye/motioneye-docker/Docker
+chmod u+x motioneye_dockerrun
+./motioneye_dockerrun
+```
+5. Open your favorite brower...wait for motioneye to be ready and Enjoy !
+
+```
+http://your_raspberry_zero_ip:8765/
+```
+
+
