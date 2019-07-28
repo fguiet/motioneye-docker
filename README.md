@@ -5,6 +5,12 @@
 * [HypriotOS](https://blog.hypriot.com/downloads/)
 * [Some FAQ to help](https://blog.hypriot.com/faq/)
 
+Don't forget to enable the raspberry camera
+
+```bash
+sudo raspi-config
+````
+
 ## Installation
 
 This tutorial is using a modified version of Calin Crisan docker file :
